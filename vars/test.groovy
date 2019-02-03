@@ -1,8 +1,9 @@
 import com.amc.jenkinscommons.*
 // instantiate
-pl = new utilityFuncs()
+
 
 def call(Map args = [:]) {
+    pl = new utilityFuncs()
     caughtError = 0
     ENV = args.get('environment') ?: 'dev'
     NODE = args.get('node') ?: ''
