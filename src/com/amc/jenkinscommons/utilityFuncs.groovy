@@ -17,10 +17,10 @@ def dockerBuidPublish(Map args) {
   PATH = args.path ?: '.'
   echo "I am in test ${TAG}"
   //docker build -t "${IMAGE_NAME}:${TAG}" ${PATH}
-  if (env.BRANCH_PUBLISH == true ) {
-    echo "I can publish"
+  if (${env.BRANCH_PUBLISH} == true ) {
+    echo "I can publish ${env.BRANCH_PUBLISH}"
   } else {
-    echo "I can not publish"
+    echo "I can not publish ${env.BRANCH_PUBLISH}"
   }
 }
 return this
