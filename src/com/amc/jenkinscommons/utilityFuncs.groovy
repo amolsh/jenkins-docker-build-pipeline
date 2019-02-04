@@ -15,7 +15,7 @@ def dockerBuidPublish(Map args) {
   VERSION = args.version ?: '1.0'
   TAG = args.tag ?: "${VERSION}.${env.BUILD_NUMBER}"
   PATH = args.path ?: '.'
-  IS_BRANCH_PUBLISH_TRUE = env.BRANCH_PUBLISH
+  IS_BRANCH_PUBLISH_TRUE = env.BRANCH_PUBLISH.toBoolean()
   println IS_BRANCH_PUBLISH_TRUE.getClass()
   echo "I am in test ${TAG}"
   //docker build -t "${IMAGE_NAME}:${TAG}" ${PATH}
