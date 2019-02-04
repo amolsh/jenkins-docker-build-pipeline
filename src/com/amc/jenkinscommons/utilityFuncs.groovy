@@ -16,6 +16,6 @@ def dockerBuidPublish(Map args) {
   TAG = args.tag ?: "${VERSION}.${env.BUILD_NUMBER}"
   PATH = args.path ?: '.'
   echo "I am in test ${TAG}"
-  sh "docker build -t ${IMAGE_NAME}:${TAG}" ${PATH}"
+  sh "docker build -t ${IMAGE_NAME}:${TAG} ${PATH}"
 }
 return this
