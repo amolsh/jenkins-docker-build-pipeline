@@ -11,8 +11,10 @@ def deploy(env,app) {
 }
 
 def dockerBuidPublish(Map args) {
-  ENV = args.environment ?: 'dev'
-  echo "I am in test ${ENV}"
+  IMAGE_NAME = args.imagename ?: ''
+  VERSION = args.version ?: '1.0'
+  TAG = args.tag ?: "${VERSION}.#${env.BUILD_NUMBER}"
+  echo "I am in test ${TAG}"
   //docker build -t ${imagename} .
 }
 return this
