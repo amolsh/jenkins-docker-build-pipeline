@@ -19,6 +19,8 @@ def dockerBuidPublish(Map args) {
   //docker build -t "${IMAGE_NAME}:${TAG}" ${PATH}
   if (env.BRANCH_PUBLISH == true ) {
     echo "I can publish"
+  } else {
+    echo "I can not publish"
   }
 }
 return this
