@@ -10,8 +10,8 @@ def deploy(env,app) {
   echo "I am in test ${env}_${app}"
 }
 
-def dockerBuidPublish(String ... args) { 
-  ENV = args.get('environment') ?: 'dev'
+def dockerBuidPublish(String ... args) {
+  ENV = args['environment'] ?: 'dev'
   echo "I am in test ${ENV}"
   //docker build -t ${imagename} .
 }
